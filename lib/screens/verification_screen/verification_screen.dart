@@ -8,6 +8,7 @@ import 'package:stacked/stacked.dart';
 import 'package:visa_bitcoin_wallet/constants/styles.dart';
 import 'package:visa_bitcoin_wallet/constants/ui_helpers.dart';
 import 'package:visa_bitcoin_wallet/screens/verification_screen/verification_screen_view_model.dart';
+import 'package:visa_bitcoin_wallet/widgets/rounded_button.dart';
 
 class VerificationScreen extends StatelessWidget {
   @override
@@ -40,7 +41,7 @@ class VerificationScreen extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: consolas.copyWith(fontWeight: FontWeight.bold),
                         ),
-                        verticalSpaceMedium,
+                        verticalSpaceLarge,
                         PinCodeTextField(
                           appContext: context,
                           cursorColor: Colors.transparent,
@@ -59,6 +60,25 @@ class VerificationScreen extends StatelessWidget {
                           ),
                           enableActiveFill: true,
                         ),
+                        verticalSpaceLarge,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Text(
+                              'Did not receive mail?',
+                              style: segoe.copyWith(
+                                  fontWeight: FontWeight.bold, color: yellow),
+                            )
+                          ],
+                        ),
+                        verticalSpaceMedium,
+                        RoundedButton(
+                          child: Text(
+                            'Validate',
+                            style: segoe.copyWith(
+                                fontWeight: FontWeight.bold, color: yellow),
+                          ),
+                        )
                       ],
                     ),
                   ),

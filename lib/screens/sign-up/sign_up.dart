@@ -42,6 +42,12 @@ class SignUp extends StatelessWidget {
                           labelText: 'Name',
                           hintText: 'John Doe',
                           textInputAction: TextInputAction.next,
+                          controller: model.name,
+                          validator: (value) {
+                            if (value.isEmpty) {
+                              return 'Please enter your name';
+                            }
+                          },
                         ),
                         verticalSpaceSmall,
                         CustomTextFormfield.regular(
@@ -49,6 +55,13 @@ class SignUp extends StatelessWidget {
                           hintText: 'example@example.com',
                           textInputType: TextInputType.emailAddress,
                           textInputAction: TextInputAction.next,
+                          controller: model.email,
+                          validator: (value) {
+                            if (!emailRegExp.hasMatch(value) ||
+                                !value.contains('.')) {
+                              return 'Invalid e-mail address';
+                            }
+                          },
                         ),
                         verticalSpaceSmall,
                         CustomTextFormfield.regular(
@@ -56,18 +69,36 @@ class SignUp extends StatelessWidget {
                           hintText: 'XXXX-XXX-XXXX',
                           textInputType: TextInputType.number,
                           textInputAction: TextInputAction.next,
+                          controller: model.phoneNumber,
+                          validator: (value) {
+                            if (value.isEmpty || value.length < 11) {
+                              return 'Enter a valid phone number';
+                            }
+                          },
                         ),
                         verticalSpaceSmall,
                         CustomTextFormfield.password(
                           labelText: 'Password',
                           textInputAction: TextInputAction.next,
                           hintText: '********',
+                          controller: model.password,
+                          validator: (value) {
+                            if (value.length < 8) {
+                              return 'Password must contain at least 8 characters';
+                            }
+                          },
                         ),
                         verticalSpaceSmall,
                         CustomTextFormfield.password(
                           labelText: 'Confirm Password',
-                          textInputAction: TextInputAction.next,
+                          controller: model.confirmPassword,
+                          textInputAction: TextInputAction.done,
                           hintText: '********',
+                          validator: (value) {
+                            if (value != model.password.text) {
+                              return 'Passwords do not match';
+                            }
+                          },
                         ),
                       ],
                     ),
@@ -102,7 +133,7 @@ class SignUp extends StatelessWidget {
                   ),
                   verticalSpaceMedium,
                   RoundedButton(
-                    onPressed: ()=>navigationService.navigateTo(Routes.verificationScreen),
+                    onPressed: () => model.verify(),
                     child: Text(
                       'Sign Up',
                       style: segoe.copyWith(
