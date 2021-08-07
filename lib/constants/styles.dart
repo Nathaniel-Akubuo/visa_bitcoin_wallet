@@ -7,7 +7,7 @@ const kYellow = Color(0xffFFA200);
 
 var kCircularBorderRadius = BorderRadius.circular(24);
 
-const kPadding = EdgeInsets.symmetric(horizontal: 50);
+const kPadding = EdgeInsets.symmetric(horizontal: 35, vertical: 20);
 
 const kSegoe =
     TextStyle(fontFamily: 'Segoe', color: Colors.white, fontSize: 18);
@@ -22,7 +22,7 @@ const kConsolas =
     TextStyle(fontSize: 20, color: Colors.white, fontFamily: 'Consolas');
 
 const kConsolasTitle = TextStyle(
-    fontSize: 28,
+    fontSize: 25,
     color: Colors.white,
     fontFamily: 'Consolas',
     fontWeight: FontWeight.bold);
@@ -31,7 +31,7 @@ const kConsolasSubtitle = TextStyle(
   fontWeight: FontWeight.bold,
   color: Colors.white,
   fontFamily: 'Consolas',
-    fontSize: 20
+    fontSize: 18
 );
 
 const kLinearGradient = LinearGradient(

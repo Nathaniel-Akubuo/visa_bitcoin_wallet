@@ -16,11 +16,7 @@ class VerificationScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Icon(
-                    Icons.person_add,
-                    color: Colors.white,
-                    size: 105,
-                  ),
+                  Icon(Icons.person_add, color: Colors.white, size: 105),
                   verticalSpaceMedium,
                   Text(
                     'Got a mail, right?',
