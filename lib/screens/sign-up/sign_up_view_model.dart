@@ -17,15 +17,17 @@ class SignUpViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  bool get isChecked => _isChecked;
-
-  TextEditingController get name => _name;
-
-  verify() {
+  void verify() {
     if (formKey.currentState.validate()) {
       navigationService.navigateTo(Routes.verificationScreen);
     }
   }
+
+  void toSignIn() => navigationService.navigateTo(Routes.signIn);
+
+  bool get isChecked => _isChecked;
+
+  TextEditingController get name => _name;
 
   TextEditingController get email => _email;
 

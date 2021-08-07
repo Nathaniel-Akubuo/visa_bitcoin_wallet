@@ -32,7 +32,7 @@ class SignUp extends StatelessWidget {
                     verticalSpaceLarge,
                     Text(
                       'Join our community',
-                      style: kConsolas,
+                      style: kConsolas.copyWith(fontWeight: FontWeight.bold),
                     ),
                     verticalSpaceLarge,
                     Form(
@@ -124,7 +124,8 @@ class SignUp extends StatelessWidget {
                                 TextSpan(
                                   text: 'Terms of Service',
                                   style: kSegoe.copyWith(
-                                      fontWeight: FontWeight.bold, color: kYellow),
+                                      fontWeight: FontWeight.bold,
+                                      color: kYellow),
                                 )
                               ],
                             ),
@@ -134,7 +135,8 @@ class SignUp extends StatelessWidget {
                     ),
                     verticalSpaceMedium,
                     RoundedButton(
-                      onPressed: () =>navigationService.navigateTo(Routes.verificationScreen),
+                      onPressed: () => navigationService
+                          .navigateTo(Routes.verificationScreen),
                       child: Text(
                         'Sign Up',
                         style: kSegoe.copyWith(
@@ -151,9 +153,11 @@ class SignUp extends StatelessWidget {
                             children: [
                               TextSpan(
                                   text: 'Sign In',
-                                  recognizer: TapGestureRecognizer(),
+                                  recognizer: TapGestureRecognizer()
+                                    ..onTap = model.toSignIn,
                                   style: kSegoe.copyWith(
-                                      color: kYellow, fontWeight: FontWeight.bold))
+                                      color: kYellow,
+                                      fontWeight: FontWeight.bold))
                             ]),
                       ),
                     ),

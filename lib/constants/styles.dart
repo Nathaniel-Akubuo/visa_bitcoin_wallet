@@ -9,7 +9,8 @@ var kCircularBorderRadius = BorderRadius.circular(24);
 
 const kPadding = EdgeInsets.all(50);
 
-const kSegoe = TextStyle(fontFamily: 'Segoe', color: Colors.white, fontSize: 18);
+const kSegoe =
+    TextStyle(fontFamily: 'Segoe', color: Colors.white, fontSize: 18);
 
 const kButtonTextStyle = TextStyle(
     fontWeight: FontWeight.bold,
@@ -19,6 +20,19 @@ const kButtonTextStyle = TextStyle(
 
 const kConsolas =
     TextStyle(fontSize: 20, color: Colors.white, fontFamily: 'Consolas');
+
+const kConsolasTitle = TextStyle(
+    fontSize: 28,
+    color: Colors.white,
+    fontFamily: 'Consolas',
+    fontWeight: FontWeight.bold);
+
+const kConsolasSubtitle = TextStyle(
+  fontWeight: FontWeight.bold,
+  color: Colors.white,
+  fontFamily: 'Consolas',
+    fontSize: 20
+);
 
 const kLinearGradient = LinearGradient(
     colors: [kDarkestBlue, kDarkerBlue, kLightBlue],

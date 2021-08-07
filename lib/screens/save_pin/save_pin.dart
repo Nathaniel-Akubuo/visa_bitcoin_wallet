@@ -18,7 +18,7 @@ class SavePin extends StatelessWidget {
                   padding: kPadding,
                   child: SingleChildScrollView(
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Icon(
                           Icons.person_add,
@@ -29,15 +29,13 @@ class SavePin extends StatelessWidget {
                         Text(
                           'Almost done,',
                           textAlign: TextAlign.center,
-                          style: kConsolas.copyWith(
-                              fontWeight: FontWeight.bold, fontSize: 25),
+                          style: kConsolasTitle,
                         ),
                         verticalSpaceMedium,
                         Text(
                           'Enter a transaction pin',
                           textAlign: TextAlign.center,
-                          style:
-                              kConsolas.copyWith(fontWeight: FontWeight.bold),
+                          style: kConsolasSubtitle,
                         ),
                         verticalSpaceLarge,
                         PinCodeTextField(
