@@ -7,7 +7,7 @@ const kYellow = Color(0xffFFA200);
 
 var kCircularBorderRadius = BorderRadius.circular(24);
 
-const kPadding = EdgeInsets.all(50);
+const kPadding = EdgeInsets.symmetric(horizontal: 50);
 
 const kSegoe =
     TextStyle(fontFamily: 'Segoe', color: Colors.white, fontSize: 18);

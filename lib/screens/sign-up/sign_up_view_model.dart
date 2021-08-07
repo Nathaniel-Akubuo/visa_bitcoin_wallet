@@ -18,12 +18,14 @@ class SignUpViewModel extends BaseViewModel {
   }
 
   void verify() {
-    if (formKey.currentState.validate()) {
-      navigationService.navigateTo(Routes.verificationScreen);
-    }
+    navigationService.navigateTo(Routes.verificationScreen);
+//    if (formKey.currentState.validate()) {
+//      navigationService.navigateTo(Routes.verificationScreen);
+//    }
   }
 
   void toSignIn() => navigationService.navigateTo(Routes.signIn);
+
 
   bool get isChecked => _isChecked;
 

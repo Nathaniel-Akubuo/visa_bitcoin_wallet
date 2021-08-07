@@ -16,7 +16,6 @@ class ForgotPassword extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            verticalSpaceLarge,
             Icon(Icons.person_add, color: Colors.white, size: 105),
             verticalSpaceMedium,
             Text('Forgot your password?',

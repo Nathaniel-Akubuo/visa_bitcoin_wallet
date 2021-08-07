@@ -13,6 +13,7 @@ class BodyWidget extends StatelessWidget {
       child: SafeArea(
         child: Scaffold(
           body: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
             padding: kPadding,
             child: child,
           ),
