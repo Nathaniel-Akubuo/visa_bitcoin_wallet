@@ -29,7 +29,6 @@ dependencies:
   cupertino_icons: ^1.0.2
   intl:
   shared_preferences:
-  flutter_verification_code:
   pin_code_fields: ^7.3.0
   provider: ^5.0.0
   stacked: ^2.1.8

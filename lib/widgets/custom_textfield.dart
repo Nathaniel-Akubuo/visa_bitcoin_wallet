@@ -43,6 +43,7 @@ class _CustomTextFormfieldState extends State<CustomTextFormfield> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      style: kSegoe.copyWith(fontSize: 15),
       controller: widget.controller,
       keyboardType: widget.textInputType,
       textInputAction: widget.textInputAction,
@@ -50,7 +51,7 @@ class _CustomTextFormfieldState extends State<CustomTextFormfield> {
       obscureText: widget.obscureText,
       decoration: InputDecoration(
         labelText: widget.labelText,
-        labelStyle: segoe,
+        labelStyle: kSegoe,
         enabledBorder:
             UnderlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
         focusedBorder: UnderlineInputBorder(
@@ -59,7 +60,7 @@ class _CustomTextFormfieldState extends State<CustomTextFormfield> {
           ),
         ),
         hintText: widget.hintText,
-        hintStyle: segoe.copyWith(color: Colors.grey, fontSize: 15),
+        hintStyle: kSegoe.copyWith(color: Colors.grey, fontSize: 15),
         suffixIcon: widget.isPasswordTextField
             ? IconButton(
                 icon: widget.obscureText
