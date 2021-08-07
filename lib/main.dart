@@ -13,7 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(unselectedWidgetColor: Colors.white),
+      theme: ThemeData(
+          unselectedWidgetColor: Colors.white,
+          scaffoldBackgroundColor: Colors.transparent),
       debugShowCheckedModeBanner: false,
       navigatorKey: StackedService.navigatorKey,
       onGenerateRoute: StackedRouter().onGenerateRoute,

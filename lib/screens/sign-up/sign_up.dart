@@ -1,6 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:visa_bitcoin_wallet/app/app.router.dart';
+import 'package:visa_bitcoin_wallet/constants/global_variables.dart';
 import 'package:visa_bitcoin_wallet/constants/styles.dart';
 import 'package:visa_bitcoin_wallet/constants/ui_helpers.dart';
 import 'package:visa_bitcoin_wallet/screens/sign-up/sign_up_view_model.dart';
@@ -100,6 +102,7 @@ class SignUp extends StatelessWidget {
                   ),
                   verticalSpaceMedium,
                   RoundedButton(
+                    onPressed: ()=>navigationService.navigateTo(Routes.verificationScreen),
                     child: Text(
                       'Sign Up',
                       style: segoe.copyWith(

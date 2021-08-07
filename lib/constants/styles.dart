@@ -7,11 +7,12 @@ const yellow = Color(0xffFFA200);
 
 var circularBorderRadius = BorderRadius.circular(24);
 
+const padding = EdgeInsets.all(50);
+
 const segoe = TextStyle(
     fontFamily: 'Segoe',
     color: Colors.white,
-    fontSize: 18,
-    fontWeight: FontWeight.w100);
+    fontSize: 18,);
 
 const consolas =
     TextStyle(fontSize: 20, color: Colors.white, fontFamily: 'Consolas');
