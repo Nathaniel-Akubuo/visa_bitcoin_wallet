@@ -4,14 +4,14 @@ import 'package:stacked/stacked.dart';
 import 'package:visa_bitcoin_wallet/constants/styles.dart';
 import 'package:visa_bitcoin_wallet/constants/ui_helpers.dart';
 import 'package:visa_bitcoin_wallet/screens/save_pin/save_pin_view_model.dart';
-import 'package:visa_bitcoin_wallet/widgets/body_widget.dart';
+import 'package:visa_bitcoin_wallet/widgets/gradient_body_widget.dart';
 import 'package:visa_bitcoin_wallet/widgets/rounded_button.dart';
 
 class SavePin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<SavePinViewModel>.reactive(
-        builder: (context, model, child) => BodyWidget(
+        builder: (context, model, child) => GradientBodyWidget(
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -25,6 +25,7 @@ class SavePin extends StatelessWidget {
                         textAlign: TextAlign.center, style: kConsolasSubtitle),
                     verticalSpaceLarge,
                     PinCodeTextField(
+                      autoDisposeControllers: false,
                       controller: model.controller,
                       appContext: context,
                       cursorColor: kYellow,

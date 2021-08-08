@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
 import '../screens/forgot-password/forgot_password.dart';
+import '../screens/home/home.dart';
+import '../screens/new_password/new_password.dart';
 import '../screens/password_verification/password_verification_screen.dart';
 import '../screens/save_pin/save_pin.dart';
 import '../screens/sign-in/sign_in.dart';
@@ -24,6 +26,8 @@ class Routes {
   static const String forgotPassword = '/forgot-password';
   static const String passwordVerificationScreen =
       '/password-verification-screen';
+  static const String newPassword = '/new-password';
+  static const String home = '/Home';
   static const all = <String>{
     signUp,
     signIn,
@@ -31,6 +35,8 @@ class Routes {
     savePin,
     forgotPassword,
     passwordVerificationScreen,
+    newPassword,
+    home,
   };
 }
 
@@ -45,6 +51,8 @@ class StackedRouter extends RouterBase {
     RouteDef(Routes.forgotPassword, page: ForgotPassword),
     RouteDef(Routes.passwordVerificationScreen,
         page: PasswordVerificationScreen),
+    RouteDef(Routes.newPassword, page: NewPassword),
+    RouteDef(Routes.home, page: Home),
   ];
   @override
   Map<Type, StackedRouteFactory> get pagesMap => _pagesMap;
@@ -82,6 +90,18 @@ class StackedRouter extends RouterBase {
     PasswordVerificationScreen: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => PasswordVerificationScreen(),
+        settings: data,
+      );
+    },
+    NewPassword: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => NewPassword(),
+        settings: data,
+      );
+    },
+    Home: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => Home(),
         settings: data,
       );
     },

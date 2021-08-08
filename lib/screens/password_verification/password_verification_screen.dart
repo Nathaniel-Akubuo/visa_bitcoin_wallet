@@ -4,15 +4,15 @@ import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:stacked/stacked.dart';
 import 'package:visa_bitcoin_wallet/constants/styles.dart';
 import 'package:visa_bitcoin_wallet/constants/ui_helpers.dart';
-import 'package:visa_bitcoin_wallet/screens/verification_screen/verification_screen_view_model.dart';
-import 'package:visa_bitcoin_wallet/widgets/body_widget.dart';
+import 'package:visa_bitcoin_wallet/screens/password_verification/password_verification_screen_view_model.dart';
+import 'package:visa_bitcoin_wallet/widgets/gradient_body_widget.dart';
 import 'package:visa_bitcoin_wallet/widgets/rounded_button.dart';
 
 class PasswordVerificationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<VerificationScreenViewModel>.reactive(
-        builder: (context, model, child) => BodyWidget(
+    return ViewModelBuilder<PasswordVerificationScreenViewModel>.reactive(
+        builder: (context, model, child) => GradientBodyWidget(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -32,6 +32,7 @@ class PasswordVerificationScreen extends StatelessWidget {
                   ),
                   verticalSpaceLarge,
                   PinCodeTextField(
+                    autoDisposeControllers: false,
                     controller: model.controller,
                     appContext: context,
                     cursorColor: kYellow,
@@ -66,7 +67,7 @@ class PasswordVerificationScreen extends StatelessWidget {
                   ),
                   verticalSpaceMedium,
                   RoundedButton(
-                    onPressed: model.toSavePin,
+                    onPressed: () => model.toNewPassword(),
                     child: Text(
                       'Validate',
                       style: kSegoe.copyWith(
@@ -76,6 +77,6 @@ class PasswordVerificationScreen extends StatelessWidget {
                 ],
               ),
             ),
-        viewModelBuilder: () => VerificationScreenViewModel());
+        viewModelBuilder: () => PasswordVerificationScreenViewModel());
   }
 }

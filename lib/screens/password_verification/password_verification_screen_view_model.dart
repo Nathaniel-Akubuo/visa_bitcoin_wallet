@@ -8,7 +8,7 @@ class PasswordVerificationScreenViewModel extends BaseViewModel {
 
   TextEditingController get controller => _controller;
 
-  void toSavePin(){
-    navigationService.navigateTo(Routes.savePin);
+  void toNewPassword(){
+    navigationService.navigateTo(Routes.newPassword);
   }
 }

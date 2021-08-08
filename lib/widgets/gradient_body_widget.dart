@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:visa_bitcoin_wallet/constants/styles.dart';
 
-class BodyWidget extends StatelessWidget {
+class GradientBodyWidget extends StatelessWidget {
   final Widget child;
 
-  BodyWidget({this.child});
+  GradientBodyWidget({this.child});
 
   @override
   Widget build(BuildContext context) {

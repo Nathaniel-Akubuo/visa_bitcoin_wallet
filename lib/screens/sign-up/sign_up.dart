@@ -5,7 +5,7 @@ import 'package:visa_bitcoin_wallet/constants/global_variables.dart';
 import 'package:visa_bitcoin_wallet/constants/styles.dart';
 import 'package:visa_bitcoin_wallet/constants/ui_helpers.dart';
 import 'package:visa_bitcoin_wallet/screens/sign-up/sign_up_view_model.dart';
-import 'package:visa_bitcoin_wallet/widgets/body_widget.dart';
+import 'package:visa_bitcoin_wallet/widgets/gradient_body_widget.dart';
 import 'package:visa_bitcoin_wallet/widgets/custom_textfield.dart';
 import 'package:visa_bitcoin_wallet/widgets/rounded_button.dart';
 
@@ -13,7 +13,7 @@ class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<SignUpViewModel>.reactive(
-      builder: (context, model, child) => BodyWidget(
+      builder: (context, model, child) => GradientBodyWidget(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
