@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:visa_bitcoin_wallet/constants/global_variables.dart';
 import 'package:visa_bitcoin_wallet/constants/styles.dart';
 import 'package:visa_bitcoin_wallet/constants/ui_helpers.dart';
 import 'package:visa_bitcoin_wallet/screens/forgot-password/forgot_password_view_model.dart';
@@ -23,13 +24,22 @@ class ForgotPassword extends StatelessWidget {
             verticalSpaceMedium,
             Text("Let's reset it", style: kConsolasSubtitle),
             verticalSpaceMedium,
-            CustomTextFormfield.regular(
-              labelText: 'E-mail',
-              textInputType: TextInputType.emailAddress,
-              controller: model.controller,
+            Form(
+              key: model.formKey,
+              child: CustomTextFormfield.regular(
+                labelText: 'E-mail',
+                textInputType: TextInputType.emailAddress,
+                controller: model.controller,
+                validator: (value) {
+                  if (!emailRegExp.hasMatch(value)) {
+                    return 'Invalid e-mail address';
+                  }
+                },
+              ),
             ),
             verticalSpaceLarge,
             RoundedButton(
+              onPressed: model.toPasswordVerificationScreen,
               child: Text('Send Verification Code', style: kButtonTextStyle),
             )
           ],

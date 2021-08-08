@@ -16,4 +16,8 @@ class SignInViewModel extends BaseViewModel {
 
   void toForgotPassword() =>
       navigationService.navigateTo(Routes.forgotPassword);
+
+  void toHomeScreen() {
+    if (formKey.currentState.validate()) {}
+  }
 }

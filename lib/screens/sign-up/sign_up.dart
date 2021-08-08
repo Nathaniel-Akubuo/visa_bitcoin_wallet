@@ -97,12 +97,14 @@ class SignUp extends StatelessWidget {
             Row(
               children: [
                 Checkbox(
-                    value: model.isChecked,
-                    activeColor: kDarkestBlue,
-                    focusColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(4)),
-                    onChanged: (value) => model.toggleCheck()),
+                  value: model.isChecked,
+                  activeColor: kDarkestBlue,
+                  focusColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  onChanged: (value) => model.toggleCheck(),
+                ),
                 Expanded(
                   child: RichText(
                     textAlign: TextAlign.center,
