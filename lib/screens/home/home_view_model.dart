@@ -1,3 +1,5 @@
 import 'package:stacked/stacked.dart';
 
-class HomeViewModel extends BaseViewModel {}
+class HomeViewModel extends BaseViewModel {
+
+}

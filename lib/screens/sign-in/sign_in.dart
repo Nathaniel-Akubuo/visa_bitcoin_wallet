@@ -67,6 +67,7 @@ class SignIn extends StatelessWidget {
                   ),
                   verticalSpaceLarge,
                   RoundedButton(
+                    onPressed: () => model.toHomeScreen(),
                     child: Text(
                       'Sign In',
                       style: kSegoe.copyWith(
