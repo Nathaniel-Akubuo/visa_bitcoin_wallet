@@ -4,6 +4,7 @@ import 'package:stacked/stacked.dart';
 import 'package:visa_bitcoin_wallet/constants/styles.dart';
 import 'package:visa_bitcoin_wallet/constants/ui_helpers.dart';
 import 'package:visa_bitcoin_wallet/screens/home/home_view_model.dart';
+import 'package:visa_bitcoin_wallet/widgets/buy_and_sell_container.dart';
 import 'package:visa_bitcoin_wallet/widgets/scrolling_body.dart';
 
 class Home extends StatelessWidget {
@@ -199,6 +200,26 @@ class Home extends StatelessWidget {
                       ],
                     ),
                   ),
+                  verticalSpaceLarge,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      BuyAndSellContainer(
+                        child: Text('Buy',
+                            style: kMicrosoftJhengHei.copyWith(
+                                color: Colors.white)),
+                        decoration: BoxDecoration(
+                            borderRadius: twentyFourBorderRadius,
+                            gradient: kButtonGradient),
+                      ),
+                      BuyAndSellContainer(
+                        child: Text('Sell', style: kMicrosoftJhengHei),
+                        decoration: BoxDecoration(
+                            borderRadius: twentyFourBorderRadius,
+                            border: Border.all(color: kDarkestBlue)),
+                      )
+                    ],
+                  )
                 ],
               ),
             ),

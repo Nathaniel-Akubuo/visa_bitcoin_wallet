@@ -78,3 +78,8 @@ flutter:
     - family: Georgia
       fonts:
         - asset: fonts/GEO_NET.ttf
+
+    - family: MicrosoftJhengHei
+      fonts:
+        - asset: fonts/msjh_0.ttf
+
