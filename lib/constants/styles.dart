@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 const kLightBlue = Color(0xff1672A5);
+const kAppBarColor = Color(0xff115880);
 const kDarkerBlue = Color(0xff093248);
 const kDarkestBlue = Color(0xff031926);
 const kUnselectedItemColor = Color(0xff8CC9FD);

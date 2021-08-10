@@ -83,6 +83,7 @@ class Home extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             BuyAndSellContainer(
+                              onTap: () => model.buyBTC(),
                               child: Text('Buy',
                                   style: kMicrosoftJhengHei.copyWith(
                                       color: Colors.white)),
@@ -91,7 +92,7 @@ class Home extends StatelessWidget {
                                   gradient: kButtonGradient),
                             ),
                             BuyAndSellContainer(
-                              onTap: ()=>model.sellBTC(),
+                              onTap: () => model.sellBTC(),
                               child: Text('Sell', style: kMicrosoftJhengHei),
                               decoration: BoxDecoration(
                                   borderRadius: twentyFourBorderRadius,

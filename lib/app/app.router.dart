@@ -9,6 +9,8 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
+import '../screens/buy_btc/buy_btc.dart';
+import '../screens/buy_btc_2/buy_btc_2.dart';
 import '../screens/forgot-password/forgot_password.dart';
 import '../screens/home/home.dart';
 import '../screens/home_initial/home_initial.dart';
@@ -18,9 +20,10 @@ import '../screens/password_verification/password_verification_screen.dart';
 import '../screens/profile/profile.dart';
 import '../screens/recent/history.dart';
 import '../screens/save_pin/save_pin.dart';
-import '../screens/buy_btc/buy_btc.dart';
+import '../screens/sell_btc/sell_btc.dart';
 import '../screens/sign-in/sign_in.dart';
 import '../screens/sign-up/sign_up.dart';
+import '../screens/transaction_detail/transaction_detail.dart';
 import '../screens/verification_screen/verification_screen.dart';
 
 class Routes {
@@ -37,7 +40,10 @@ class Routes {
   static const String history = '/History';
   static const String messages = '/Messages';
   static const String profile = '/Profile';
+  static const String buyBTC = '/buy-bt-c';
+  static const String buyBTC2 = '/buy-bt-c2';
   static const String sellBTC = '/sell-bt-c';
+  static const String transactionDetail = '/transaction-detail';
   static const all = <String>{
     signUp,
     signIn,
@@ -51,7 +57,10 @@ class Routes {
     history,
     messages,
     profile,
+    buyBTC,
+    buyBTC2,
     sellBTC,
+    transactionDetail,
   };
 }
 
@@ -72,9 +81,11 @@ class StackedRouter extends RouterBase {
     RouteDef(Routes.history, page: History),
     RouteDef(Routes.messages, page: Messages),
     RouteDef(Routes.profile, page: Profile),
-    RouteDef(Routes.sellBTC, page: BuyBTC),
+    RouteDef(Routes.buyBTC, page: BuyBTC),
+    RouteDef(Routes.buyBTC2, page: BuyBTC2),
+    RouteDef(Routes.sellBTC, page: SellBTC),
+    RouteDef(Routes.transactionDetail, page: TransactionDetail),
   ];
-
   @override
   Map<Type, StackedRouteFactory> get pagesMap => _pagesMap;
   final _pagesMap = <Type, StackedRouteFactory>{
@@ -153,6 +164,24 @@ class StackedRouter extends RouterBase {
     BuyBTC: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => BuyBTC(),
+        settings: data,
+      );
+    },
+    BuyBTC2: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => BuyBTC2(),
+        settings: data,
+      );
+    },
+    SellBTC: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => SellBTC(),
+        settings: data,
+      );
+    },
+    TransactionDetail: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => TransactionDetail(),
         settings: data,
       );
     },

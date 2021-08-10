@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:visa_bitcoin_wallet/constants/styles.dart';
 import 'package:visa_bitcoin_wallet/constants/ui_helpers.dart';
-import 'package:visa_bitcoin_wallet/screens/buy_btc/buy_btc_view_model.dart';
+import 'package:visa_bitcoin_wallet/screens/transaction_detail/transaction_detail_view_model.dart';
 import 'package:visa_bitcoin_wallet/widgets/buy_text_field.dart';
 import 'package:visa_bitcoin_wallet/widgets/gradient_body_widget.dart';
 import 'package:visa_bitcoin_wallet/widgets/rounded_button.dart';
 
-class BuyBTC extends StatelessWidget {
+class TransactionDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<BuyBTCViewModel>.reactive(
+    return ViewModelBuilder<TransactionDetailViewModel>.reactive(
         builder: (context, model, child) => GradientBodyWidget(
               appBar: AppBar(
                 backgroundColor: kAppBarColor,
@@ -21,36 +21,47 @@ class BuyBTC extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   verticalSpaceSmall,
-                  Center(child: Text('Buy Bitcoin', style: kConsolasSubtitle)),
+                  Center(
+                      child:
+                          Text('Transaction detail', style: kConsolasSubtitle)),
                   verticalSpaceMedium,
                   Text(
-                    'You pay',
+                    'You send',
                     style: kMSReferenceSansSerif.copyWith(
                         color: Colors.grey, fontSize: 15),
                   ),
                   verticalSpaceMedium,
                   BuyTextField(
-                    suffixText: 'NGN',
+                    suffixText: 'BTC',
                   ),
-                  verticalSpaceLarge,
-                  Text('You get',
-                      style: kMSReferenceSansSerif.copyWith(
-                          color: Colors.grey, fontSize: 15)),
                   verticalSpaceMedium,
-                  BuyTextField(isFocusable: false, suffixText: 'BTC'),
+                  Text(
+                    'Transaction slip',
+                    style: kMSReferenceSansSerif.copyWith(
+                        color: Colors.grey, fontSize: 15),
+                  ),
                   verticalSpaceMedium,
-                  BuyTextField(isFocusable: false, suffixText: 'USD'),
+                  Container(
+                    height: 300,
+                    width: double.infinity,
+                    decoration: BoxDecoration(color: Color(0xffFEFEFE)),
+                    child: Center(
+                        child: Text(
+                      'Pick Image',
+                      style: kMSReferenceSansSerif.copyWith(color: Colors.grey),
+                    )),
+                  ),
                   verticalSpaceLarge,
                   verticalSpaceLarge,
                   RoundedButton(
-                    onPressed: () => model.next(),
-                    child: Text('Continue',
+                    child: Text('Submit',
                         style: kMSReferenceSansSerif.copyWith(
                             color: Colors.black, fontWeight: FontWeight.bold)),
-                  )
+                  ),
+                  verticalSpaceMedium
                 ],
               ),
             ),
-        viewModelBuilder: () => BuyBTCViewModel());
+        viewModelBuilder: () => TransactionDetailViewModel());
   }
 }
