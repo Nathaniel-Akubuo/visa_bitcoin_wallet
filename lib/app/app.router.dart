@@ -33,9 +33,10 @@ class Routes {
   static const String newPassword = '/new-password';
   static const String homeInitial = '/home-initial';
   static const String home = '/Home';
-  static const String recent = '/Recent';
+  static const String history = '/History';
   static const String messages = '/Messages';
   static const String profile = '/Profile';
+  static const String hiddenDrawerLayout = '/hidden-drawer-layout';
   static const all = <String>{
     signUp,
     signIn,
@@ -46,9 +47,10 @@ class Routes {
     newPassword,
     homeInitial,
     home,
-    recent,
+    history,
     messages,
     profile,
+    hiddenDrawerLayout,
   };
 }
 
@@ -66,7 +68,7 @@ class StackedRouter extends RouterBase {
     RouteDef(Routes.newPassword, page: NewPassword),
     RouteDef(Routes.homeInitial, page: HomeInitial),
     RouteDef(Routes.home, page: Home),
-    RouteDef(Routes.recent, page: History),
+    RouteDef(Routes.history, page: History),
     RouteDef(Routes.messages, page: Messages),
     RouteDef(Routes.profile, page: Profile),
   ];

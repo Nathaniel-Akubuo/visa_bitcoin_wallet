@@ -13,6 +13,7 @@ class GradientBodyWidget extends StatelessWidget {
       decoration: BoxDecoration(gradient: kLinearGradient),
       child: SafeArea(
         child: Scaffold(
+
           body: SingleChildScrollView(
             physics: BouncingScrollPhysics(),
             padding: padding ?? kPadding,

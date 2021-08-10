@@ -6,7 +6,9 @@ class History extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<HistoryViewModel>.reactive(
-        builder: (context, model, child) => Scaffold(),
+        builder: (context, model, child) => Scaffold(
+              backgroundColor: Colors.white,
+            ),
         viewModelBuilder: () => HistoryViewModel());
   }
 }
