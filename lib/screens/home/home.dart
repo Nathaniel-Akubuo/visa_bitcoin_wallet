@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:stacked/stacked.dart';
 import 'package:visa_bitcoin_wallet/constants/styles.dart';
 import 'package:visa_bitcoin_wallet/constants/ui_helpers.dart';
 import 'package:visa_bitcoin_wallet/screens/home/home_view_model.dart';
+import 'package:visa_bitcoin_wallet/util/ui.dart';
 import 'package:visa_bitcoin_wallet/widgets/buy_and_sell_container.dart';
 import 'package:visa_bitcoin_wallet/widgets/scrolling_body.dart';
 import 'package:visa_bitcoin_wallet/widgets/send_and_receive_container.dart';
@@ -11,15 +13,20 @@ import 'package:visa_bitcoin_wallet/widgets/send_and_receive_container.dart';
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var uiUtil = Provider.of<UIUtil>(context, listen: true);
     return ViewModelBuilder<HomeViewModel>.reactive(
         builder: (context, model, child) => Scaffold(
               backgroundColor: Colors.white,
               appBar: AppBar(
                 backgroundColor: Colors.white,
-                leading: Icon(
-                  Icons.menu,
-                  color: kDarkestBlue,
-                ),
+                leading: IconButton(
+                    icon: Icon(
+                      Icons.menu,
+                      color: kDarkestBlue,
+                    ),
+                    onPressed: uiUtil.isDrawerOpen()
+                        ? uiUtil.closeDrawer
+                        : uiUtil.openDrawer),
                 actions: [
                   Stack(alignment: Alignment.center, children: [
                     Icon(

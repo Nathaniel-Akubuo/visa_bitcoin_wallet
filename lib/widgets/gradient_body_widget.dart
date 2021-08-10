@@ -3,8 +3,9 @@ import 'package:visa_bitcoin_wallet/constants/styles.dart';
 
 class GradientBodyWidget extends StatelessWidget {
   final Widget child;
+  final EdgeInsetsGeometry padding;
 
-  GradientBodyWidget({this.child});
+  GradientBodyWidget({this.child, this.padding});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class GradientBodyWidget extends StatelessWidget {
         child: Scaffold(
           body: SingleChildScrollView(
             physics: BouncingScrollPhysics(),
-            padding: kPadding,
+            padding: padding ?? kPadding,
             child: child,
           ),
         ),
