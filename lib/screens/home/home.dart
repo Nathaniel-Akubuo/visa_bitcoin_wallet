@@ -16,15 +16,17 @@ class Home extends StatelessWidget {
     var util = Provider.of<Util>(context, listen: true);
     return ViewModelBuilder<HomeViewModel>.reactive(
         builder: (context, model, child) => GestureDetector(
-          onTap: util.isDrawerOpen() ? util.closeDrawer : null,
-          child: AnimatedContainer(
-            duration: Duration(milliseconds: 250),
-            transform: Matrix4.translationValues(util.xOffset, util.yOffset, 0)
-              ..scale(util.scale),
-            child: ClipRRect(borderRadius: util.isDrawerOpen()
-                ? kCircularBorderRadius
-                : BorderRadius.zero,
-              child: Scaffold(
+              onTap: util.isDrawerOpen() ? util.closeDrawer : null,
+              child: AnimatedContainer(
+                duration: Duration(milliseconds: 250),
+                transform:
+                    Matrix4.translationValues(util.xOffset, util.yOffset, 0)
+                      ..scale(util.scale),
+                child: ClipRRect(
+                  borderRadius: util.isDrawerOpen()
+                      ? kCircularBorderRadius
+                      : BorderRadius.zero,
+                  child: Scaffold(
                     backgroundColor: Colors.white,
                     appBar: AppBar(
                       backgroundColor: Colors.white,
@@ -64,43 +66,51 @@ class Home extends StatelessWidget {
                             children: [
                               Text('BTC WALLET', style: kMSReferenceSansSerif),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
                                     r'$600',
                                     style: kSegoe.copyWith(
-                                        fontWeight: FontWeight.bold, fontSize: 23),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 23),
                                   ),
                                   Text(
                                     '0.04 BTC',
                                     style: kSegoe.copyWith(
-                                        fontSize: 15, fontWeight: FontWeight.bold),
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold),
                                   ),
                                 ],
                               ),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   SendAndReceiveContainer(
                                     child: Text(
                                       'Send',
                                       style: kSegoe.copyWith(
-                                          fontSize: 16, fontWeight: FontWeight.bold),
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold),
                                     ),
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(24),
-                                        border: Border.all(color: Colors.white)),
+                                        border:
+                                            Border.all(color: Colors.white)),
                                   ),
                                   SendAndReceiveContainer(
                                     child: Text(
                                       'Receive',
                                       style: kSegoe.copyWith(
-                                          fontSize: 16, fontWeight: FontWeight.bold),
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold),
                                     ),
                                     decoration: BoxDecoration(
                                         color: kDarkestBlue,
-                                        borderRadius: BorderRadius.circular(24)),
+                                        borderRadius:
+                                            BorderRadius.circular(24)),
                                   ),
                                 ],
                               )
@@ -111,21 +121,23 @@ class Home extends StatelessWidget {
                         Text('Market Stats',
                             style: kConsolasTitle.copyWith(
                                 color: Colors.black, fontSize: 18)),
+                        verticalSpaceRegular,
                         Container(
                           child: Row(
                             children: [
                               Container(
+                                height: 70,
+                                width: 70,
+                                padding: const EdgeInsets.only(
+                                    left: 20, right: 15, top: 10),
                                 decoration: BoxDecoration(
                                     shape: BoxShape.circle, color: kDarkerBlue),
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 15, vertical: 25),
-                                  child: Text('B', style: kGeorgia),
-                                ),
+                                child: Center(child: Text('B', style: kGeorgia)),
                               ),
                               horizontalSpaceSmall,
                               Column(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
@@ -145,21 +157,24 @@ class Home extends StatelessWidget {
                             ],
                           ),
                         ),
+                        verticalSpaceRegular,
                         Container(
                           child: Row(
                             children: [
                               Container(
+                                height: 70,
+                                width: 70,
+                                padding: const EdgeInsets.only(
+                                    left: 20, right: 15, top: 10),
                                 decoration: BoxDecoration(
-                                    shape: BoxShape.circle, color: Colors.green),
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 15, vertical: 25),
-                                  child: Text('E', style: kGeorgia),
-                                ),
+                                    shape: BoxShape.circle,
+                                    color: Colors.green),
+                                child: Center(child: Text('E', style: kGeorgia)),
                               ),
                               horizontalSpaceSmall,
                               Column(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
@@ -179,21 +194,26 @@ class Home extends StatelessWidget {
                             ],
                           ),
                         ),
+                        verticalSpaceRegular,
                         Container(
                           child: Row(
                             children: [
                               Container(
+                                height: 70,
+                                width: 70,
+                                padding: const EdgeInsets.only(
+                                    left: 20, right: 15, top: 10),
                                 decoration: BoxDecoration(
-                                    shape: BoxShape.circle, color: Colors.orange),
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 15, vertical: 25),
+                                    shape: BoxShape.circle,
+                                    color: Colors.orange),
+                                child: Center(
                                   child: Text('D', style: kGeorgia),
                                 ),
                               ),
                               horizontalSpaceSmall,
                               Column(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
@@ -213,6 +233,7 @@ class Home extends StatelessWidget {
                             ],
                           ),
                         ),
+                        verticalSpaceRegular,
                         verticalSpaceLarge,
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -236,9 +257,9 @@ class Home extends StatelessWidget {
                       ],
                     ),
                   ),
+                ),
+              ),
             ),
-          ),
-        ),
         viewModelBuilder: () => HomeViewModel());
   }
 }
