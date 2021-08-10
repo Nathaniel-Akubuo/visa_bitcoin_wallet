@@ -6,6 +6,7 @@ import 'package:visa_bitcoin_wallet/constants/ui_helpers.dart';
 import 'package:visa_bitcoin_wallet/screens/home/home_view_model.dart';
 import 'package:visa_bitcoin_wallet/widgets/buy_and_sell_container.dart';
 import 'package:visa_bitcoin_wallet/widgets/scrolling_body.dart';
+import 'package:visa_bitcoin_wallet/widgets/send_and_receive_container.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -65,9 +66,7 @@ class Home extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Container(
-                              padding: const EdgeInsets.only(
-                                  left: 10, right: 10, bottom: 3),
+                            SendAndReceiveContainer(
                               child: Text(
                                 'Send',
                                 style: kSegoe.copyWith(
@@ -77,9 +76,7 @@ class Home extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(24),
                                   border: Border.all(color: Colors.white)),
                             ),
-                            Container(
-                              padding: const EdgeInsets.only(
-                                  left: 10, right: 10, bottom: 3),
+                            SendAndReceiveContainer(
                               child: Text(
                                 'Receive',
                                 style: kSegoe.copyWith(
