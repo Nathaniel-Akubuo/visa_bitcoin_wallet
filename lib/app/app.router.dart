@@ -18,7 +18,7 @@ import '../screens/password_verification/password_verification_screen.dart';
 import '../screens/profile/profile.dart';
 import '../screens/recent/history.dart';
 import '../screens/save_pin/save_pin.dart';
-import '../screens/sell_btc/sell_btc.dart';
+import '../screens/buy_btc/buy_btc.dart';
 import '../screens/sign-in/sign_in.dart';
 import '../screens/sign-up/sign_up.dart';
 import '../screens/verification_screen/verification_screen.dart';
@@ -72,8 +72,9 @@ class StackedRouter extends RouterBase {
     RouteDef(Routes.history, page: History),
     RouteDef(Routes.messages, page: Messages),
     RouteDef(Routes.profile, page: Profile),
-    RouteDef(Routes.sellBTC, page: SellBTC),
+    RouteDef(Routes.sellBTC, page: BuyBTC),
   ];
+
   @override
   Map<Type, StackedRouteFactory> get pagesMap => _pagesMap;
   final _pagesMap = <Type, StackedRouteFactory>{
@@ -149,9 +150,9 @@ class StackedRouter extends RouterBase {
         settings: data,
       );
     },
-    SellBTC: (data) {
+    BuyBTC: (data) {
       return MaterialPageRoute<dynamic>(
-        builder: (context) => SellBTC(),
+        builder: (context) => BuyBTC(),
         settings: data,
       );
     },
