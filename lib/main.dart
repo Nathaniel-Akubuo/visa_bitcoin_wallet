@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         navigatorKey: StackedService.navigatorKey,
         onGenerateRoute: StackedRouter().onGenerateRoute,
-        initialRoute: Routes.homeInitial,
+        initialRoute: Routes.signUp,
       ),
     );
   }
