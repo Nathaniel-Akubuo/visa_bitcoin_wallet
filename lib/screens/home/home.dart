@@ -7,8 +7,9 @@ import 'package:visa_bitcoin_wallet/constants/ui_helpers.dart';
 import 'package:visa_bitcoin_wallet/screens/home/home_view_model.dart';
 import 'package:visa_bitcoin_wallet/util/util.dart';
 import 'package:visa_bitcoin_wallet/widgets/buy_and_sell_container.dart';
+import 'package:visa_bitcoin_wallet/widgets/card_widget.dart';
+import 'package:visa_bitcoin_wallet/widgets/crypto_stat_container.dart';
 import 'package:visa_bitcoin_wallet/widgets/scrolling_body.dart';
-import 'package:visa_bitcoin_wallet/widgets/send_and_receive_container.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -53,186 +54,29 @@ class Home extends StatelessWidget {
                     body: PaddedScrollingBody(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Container(
-                          padding: kPadding.copyWith(top: 15, bottom: 15),
-                          width: double.infinity,
-                          height: 200,
-                          decoration: BoxDecoration(
-                              gradient: kCardGradient,
-                              borderRadius: BorderRadius.circular(24)),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text('BTC WALLET', style: kMSReferenceSansSerif),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    r'$600',
-                                    style: kSegoe.copyWith(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 23),
-                                  ),
-                                  Text(
-                                    '0.04 BTC',
-                                    style: kSegoe.copyWith(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  SendAndReceiveContainer(
-                                    child: Text(
-                                      'Send',
-                                      style: kSegoe.copyWith(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(24),
-                                        border:
-                                            Border.all(color: Colors.white)),
-                                  ),
-                                  SendAndReceiveContainer(
-                                    child: Text(
-                                      'Receive',
-                                      style: kSegoe.copyWith(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    decoration: BoxDecoration(
-                                        color: kDarkestBlue,
-                                        borderRadius:
-                                            BorderRadius.circular(24)),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
+                        CardWidget(),
                         verticalSpaceLarge,
                         Text('Market Stats',
                             style: kConsolasTitle.copyWith(
                                 color: Colors.black, fontSize: 18)),
                         verticalSpaceRegular,
-                        Container(
-                          child: Row(
-                            children: [
-                              Container(
-                                height: 70,
-                                width: 70,
-                                padding: const EdgeInsets.only(
-                                    left: 20, right: 15, top: 10),
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle, color: kDarkerBlue),
-                                child: Center(child: Text('B', style: kGeorgia)),
-                              ),
-                              horizontalSpaceSmall,
-                              Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Bitcoin',
-                                    style: kMSReferenceSansSerif.copyWith(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20),
-                                  ),
-                                  Text(
-                                    r'$40,000',
-                                    style: kMSReferenceSansSerif.copyWith(
-                                        color: Colors.grey, fontSize: 15),
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
+                        CryptoStatContainer(
+                            color: kDarkerBlue,
+                            initial: 'B',
+                            name: 'Bitcoin',
+                            price: r'$40,000'),
                         verticalSpaceRegular,
-                        Container(
-                          child: Row(
-                            children: [
-                              Container(
-                                height: 70,
-                                width: 70,
-                                padding: const EdgeInsets.only(
-                                    left: 20, right: 15, top: 10),
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Colors.green),
-                                child: Center(child: Text('E', style: kGeorgia)),
-                              ),
-                              horizontalSpaceSmall,
-                              Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Ethereum',
-                                    style: kMSReferenceSansSerif.copyWith(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20),
-                                  ),
-                                  Text(
-                                    r'$2,000',
-                                    style: kMSReferenceSansSerif.copyWith(
-                                        color: Colors.grey, fontSize: 15),
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
+                        CryptoStatContainer(
+                            color: Colors.green,
+                            initial: 'E',
+                            name: 'Ethereum',
+                            price: r'$2,000'),
                         verticalSpaceRegular,
-                        Container(
-                          child: Row(
-                            children: [
-                              Container(
-                                height: 70,
-                                width: 70,
-                                padding: const EdgeInsets.only(
-                                    left: 20, right: 15, top: 10),
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Colors.orange),
-                                child: Center(
-                                  child: Text('D', style: kGeorgia),
-                                ),
-                              ),
-                              horizontalSpaceSmall,
-                              Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Dogecoin',
-                                    style: kMSReferenceSansSerif.copyWith(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20),
-                                  ),
-                                  Text(
-                                    r'$70',
-                                    style: kMSReferenceSansSerif.copyWith(
-                                        color: Colors.grey, fontSize: 15),
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
+                        CryptoStatContainer(
+                            color: Colors.orange,
+                            initial: 'D',
+                            name: 'Dogecoin',
+                            price: r'$70'),
                         verticalSpaceRegular,
                         verticalSpaceLarge,
                         Row(
@@ -247,6 +91,7 @@ class Home extends StatelessWidget {
                                   gradient: kButtonGradient),
                             ),
                             BuyAndSellContainer(
+                              onTap: ()=>model.sellBTC(),
                               child: Text('Sell', style: kMicrosoftJhengHei),
                               decoration: BoxDecoration(
                                   borderRadius: twentyFourBorderRadius,

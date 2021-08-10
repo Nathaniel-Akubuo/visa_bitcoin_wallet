@@ -9,6 +9,7 @@ import 'package:visa_bitcoin_wallet/screens/password_verification/password_verif
 import 'package:visa_bitcoin_wallet/screens/profile/profile.dart';
 import 'package:visa_bitcoin_wallet/screens/recent/history.dart';
 import 'package:visa_bitcoin_wallet/screens/save_pin/save_pin.dart';
+import 'package:visa_bitcoin_wallet/screens/sell_btc/sell_btc.dart';
 import 'package:visa_bitcoin_wallet/screens/sign-in/sign_in.dart';
 import 'package:visa_bitcoin_wallet/screens/sign-up/sign_up.dart';
 import 'package:visa_bitcoin_wallet/screens/verification_screen/verification_screen.dart';
@@ -27,6 +28,7 @@ import 'package:visa_bitcoin_wallet/screens/verification_screen/verification_scr
     MaterialRoute(page: History),
     MaterialRoute(page: Messages),
     MaterialRoute(page: Profile),
+    MaterialRoute(page: SellBTC),
   ],
   dependencies: [
     LazySingleton(classType: NavigationService),

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:visa_bitcoin_wallet/constants/styles.dart';
-
 class RoundedButton extends StatelessWidget {
   final Color buttonColor;
   final Widget child;
@@ -15,7 +13,7 @@ class RoundedButton extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 16.0),
       child: Material(
         color: buttonColor ?? Colors.white,
-        borderRadius: kCircularBorderRadius,
+        borderRadius: BorderRadius.circular(16),
         child: MaterialButton(
           onPressed: onPressed,
           minWidth: double.infinity,
